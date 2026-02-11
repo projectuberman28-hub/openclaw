@@ -1,0 +1,5 @@
+FROM node:22-alpine
+RUN addgroup -g 1000 sandbox && adduser -D -u 1000 -G sandbox sandbox
+WORKDIR /sandbox
+USER sandbox
+CMD ["node", "--experimental-vm-modules", "run.js"]

@@ -1,0 +1,16 @@
+export {
+  SyncEngine,
+  incrementClock,
+  mergeClock,
+  compareClock,
+  dominates,
+  SYNCABLE_CATEGORIES,
+  NEVER_SYNC_CATEGORIES,
+  type SyncableCategory,
+  type NeverSyncCategory,
+  type SyncPeer,
+  type SyncDelta,
+  type SyncPayload,
+  type SyncEngineOptions,
+  type VectorClock,
+} from './sync-engine.js';

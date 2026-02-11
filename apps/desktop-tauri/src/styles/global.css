@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-tertiary: #1a1a25;
+  --border-color: #2a2a35;
+  --hover-color: #252530;
+  --text-primary: #e4e4e7;
+  --text-muted: #71717a;
+  --accent: #dc2626;
+  --accent-hover: #ef4444;
+  --success: #22c55e;
+  --warning: #eab308;
+  --info: #3b82f6;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-batcave-primary text-batcave-text;
+    overflow: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a35;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a45;
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(220, 38, 38, 0.3);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-batcave-accent hover:bg-batcave-accent-hover text-white px-4 py-2 rounded-lg
+           font-medium transition-all duration-200 ease-in-out
+           focus:outline-none focus:ring-2 focus:ring-batcave-accent focus:ring-offset-2 focus:ring-offset-batcave-primary
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-batcave-tertiary hover:bg-batcave-hover text-batcave-text px-4 py-2 rounded-lg
+           font-medium border border-batcave-border transition-all duration-200 ease-in-out
+           focus:outline-none focus:ring-2 focus:ring-batcave-border focus:ring-offset-2 focus:ring-offset-batcave-primary
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-batcave-hover text-batcave-text-muted hover:text-batcave-text px-3 py-2 rounded-lg
+           transition-all duration-200 ease-in-out
+           focus:outline-none focus:ring-2 focus:ring-batcave-border;
+  }
+
+  .card {
+    @apply bg-batcave-secondary border border-batcave-border rounded-xl p-4
+           transition-all duration-200 ease-in-out;
+  }
+
+  .card-hover {
+    @apply card hover:border-batcave-accent/30 hover:shadow-lg hover:shadow-batcave-accent/5;
+  }
+
+  .input-field {
+    @apply bg-batcave-tertiary border border-batcave-border rounded-lg px-3 py-2
+           text-batcave-text placeholder-batcave-text-muted
+           focus:outline-none focus:ring-2 focus:ring-batcave-accent focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .status-dot {
+    @apply w-2 h-2 rounded-full inline-block;
+  }
+
+  .status-dot-healthy {
+    @apply status-dot bg-batcave-success animate-pulse-slow;
+  }
+
+  .status-dot-warning {
+    @apply status-dot bg-batcave-warning;
+  }
+
+  .status-dot-error {
+    @apply status-dot bg-batcave-accent;
+  }
+
+  .status-dot-inactive {
+    @apply status-dot bg-batcave-text-muted;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-batcave-accent to-red-400 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(10, 10, 15, 0.8);
+  }
+
+  .no-drag {
+    -webkit-app-region: no-drag;
+  }
+
+  .drag {
+    -webkit-app-region: drag;
+  }
+}
+
+/* Code block syntax highlighting override for dark theme */
+pre code.hljs {
+  background: var(--bg-tertiary) !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+}
+
+.hljs {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}

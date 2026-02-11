@@ -1,0 +1,10 @@
+packages:
+  - packages/*
+  - apps/*
+  - extensions/*
+  - skills/curated/*
+  - skills/bundled/*
+
+onlyBuiltDependencies:
+  - better-sqlite3
+  - esbuild

@@ -1,0 +1,19 @@
+{
+  "name": "@alfred/playbook",
+  "version": "3.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": { ".": "./dist/index.js", "./*": "./dist/*.js" },
+  "scripts": { "build": "tsc", "test": "vitest run" },
+  "dependencies": {
+    "@alfred/core": "workspace:*",
+    "better-sqlite3": "^11.0.0",
+    "pino": "^9.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0",
+    "@types/better-sqlite3": "^7.6.0"
+  }
+}

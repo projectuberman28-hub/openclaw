@@ -1,0 +1,52 @@
+node_modules/
+dist/
+.turbo/
+*.tsbuildinfo
+
+# Tauri
+apps/desktop-tauri/src-tauri/target/
+apps/desktop-tauri/src-tauri/gen/
+
+# iOS
+apps/ios/build/
+apps/ios/*.xcworkspace
+apps/ios/Pods/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Credentials
+*.key
+*.pem
+vault.enc
+key.age
+
+# Logs
+*.log
+logs/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache
+.cache/
+*.cache
+
+# Docker
+docker-compose.override.yml
+
+# Alfred state
+.alfred/

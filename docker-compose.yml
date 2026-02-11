@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  alfred:
+    build: .
+    ports: ["18789:18789"]
+    volumes:
+      - alfred_data:/home/alfred/.alfred
+    environment:
+      - ALFRED_HOME=/home/alfred/.alfred
+    restart: unless-stopped
+    depends_on: [searxng]
+
+  searxng:
+    image: searxng/searxng:latest
+    ports: ["8888:8080"]
+    volumes:
+      - searxng_data:/etc/searxng
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8888
+    restart: unless-stopped
+
+  signal-cli:
+    image: bbernhard/signal-cli-rest-api:latest
+    ports: ["8080:8080"]
+    volumes:
+      - signal_data:/home/.local/share/signal-cli
+    restart: unless-stopped
+    profiles: [signal]
+
+volumes:
+  alfred_data:
+  searxng_data:
+  signal_data:

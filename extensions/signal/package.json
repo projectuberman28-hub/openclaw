@@ -1,0 +1,9 @@
+{
+  "name": "@alfred/channel-signal",
+  "version": "3.0.0",
+  "type": "module",
+  "main": "channel.ts",
+  "dependencies": {
+    "@alfred/core": "workspace:*"
+  }
+}

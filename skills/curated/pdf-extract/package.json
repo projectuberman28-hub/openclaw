@@ -1,0 +1,9 @@
+{
+  "name": "@alfred/skill-pdf-extract",
+  "version": "3.0.0",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "@alfred/core": "workspace:*"
+  }
+}
